@@ -14,13 +14,9 @@ def get_products():
     data = response.json()
     for item in items:
         print(item)
-        print(data['products'][item]['quick_status']['sellPrice'])
-
-    # Access the quick_status for the product "INK_SACK:3"
-    quick_status_ink_sack_3 = data['products']['INK_SACK:3']['quick_status']
-
-    # Print the sell price
-    print("Sell Price for INK_SACK:3:", quick_status_ink_sack_3['sellPrice'])
+        sell_price = data['products'][item]['quick_status']['sellPrice']
+        rounded_sell_price = round(sell_price,1)
+        print(rounded_sell_price)
         
     return data
 
