@@ -16,6 +16,7 @@ def get_products():
             del data['products'][product]['sell_summary']
         if 'buy_summary' in data['products'][product]:
             del data['products'][product]['buy_summary']
+        
 
     ##with open('data.json', 'w') as f:
         ##json.dump(data, f)
@@ -25,14 +26,16 @@ def get_products():
     return data
 
 def calculate_price(data):
-    items160 = ['COBBLESTONE','PUMPKIN','STRING']
+    itemsb160 = ['IRON_INGOT','MELON','DIAMOND']
+    itemse160 = ['ENCHANTED_IRON','ENCHANTED_MELON','ENCHANTED_DIAMOND']
     items8= []
 
-    for item in items160:
+    for item in itemsb160:
         sell_price = data['products'][item]['quick_status']['sellPrice']
         rounded_sell_price = round(sell_price,1)
         price = rounded_sell_price * 160
-        print("Enchanted " + item+": " + str(price))
+        print(item+": " + str(price))
+        
 
 
 
