@@ -75,7 +75,7 @@ def calcute_price(itemarray):
                             else:
                                 color = Fore.RESET
 
-                            print(item2.productId + " S: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
+                            
                             print(item3.productId + " S: " + str(round(item3.sellPrice, 1)) + " Coins B: " + str(round(item3.buyPrice, 1)) + " Coins")
                             print(color + "Profit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                     
