@@ -1,11 +1,21 @@
 import requests
 import json
+from colorama import Fore
 
 apiKey = "8b47b741-8018-4ea2-a564-b01d5302b1d6"
 l = "api.hypixel.net/skyblock/bazaar/products?key=8b47b741-8018-4ea2-a564-b01d5302b1d6"
 
+class Item:
+    def __init__(self,id,sellP,buyP):
+        self.productId= id
+        self.sellPrice=buyP
+        self.buyPrice=sellP
+        
+
+
 
 def get_products():
+    itemsobjects = []
     items = ['COBBLESTONE','ENCHANTED_COBBLESTONE','ENCHANTED_MELON_BLOCK','ENCHANTED_MELON',
          'ENCHANTED_POTATO','','ENCHANTED_PUMPKIN','STRING','ENCHANTED_STRING',]
     url = "https://api.hypixel.net/v2/skyblock/bazaar"
@@ -16,17 +26,51 @@ def get_products():
             del data['products'][product]['sell_summary']
         if 'buy_summary' in data['products'][product]:
             del data['products'][product]['buy_summary']
-        
-
-    ##with open('data.json', 'w') as f:
-        ##json.dump(data, f)
-
     
-        
-    return data
+    for product in data['products']:
+        ##create new Item object
+        item = Item(product,data['products'][product]['quick_status']['sellPrice'],data['products'][product]['quick_status']['buyPrice'])
+        itemsobjects.append(item)
+        ##with open('data.json', 'w') as f:
+        ##json.dump(data, f)
+    
+    return itemsobjects
 
-def calculate_price(data):
-    itemsb160 = ['IRON_INGOT','MELON','DIAMOND']
+        
+def calcute_price(itemarray):
+    itemsb160 = ['IRON_INGOT','MELON','DIAMOND','GOLD_INGOT','EMERALD','SAND','OBSIDIAN','LEATHER']
+    for item in itemarray:
+        if item.productId in itemsb160:
+            for item2 in itemarray:
+                if item2.productId == 'ENCHANTED_'+item.productId: 
+                    
+
+                    profit = round(item2.sellPrice - item.buyPrice*160,1)
+                    profitPercentage = round((profit / item2.sellPrice)*100)
+
+                    if profitPercentage < 10:
+                        color = Fore.RED
+                    elif profitPercentage > 25:
+                        color = Fore.GREEN
+                    else:
+                        color = Fore.RESET
+
+                    print(item.productId + " S: " + str(round(item.sellPrice, 1)) + " Coins B: " + str(round(item.buyPrice, 1)) + " Coins")
+                    print(item2.productId + " S: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
+                    print(color + "Profit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
+                    
+                    
+                
+               
+        
+            
+            
+
+
+
+
+def calculate_price1(data):
+    itemsb160 = ['IRON_INGOT','MELON','DIAMOND','GOLD_INGOT','EMERALD','SAND','OBSIDIAN','LEATHER']
     itemse160 = ['ENCHANTED_IRON','ENCHANTED_MELON','ENCHANTED_DIAMOND']
     items8= []
 
@@ -35,10 +79,8 @@ def calculate_price(data):
         rounded_sell_price = round(sell_price,1)
         price = rounded_sell_price * 160
         print(item+": " + str(price))
-        
-
 
 
 
 if __name__ == "__main__":
-    calculate_price(get_products())
+    calcute_price(get_products())
