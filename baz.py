@@ -61,6 +61,24 @@ def calcute_price(itemarray):
                     print(item2.productId + " S: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
                     print(color + "Profit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                     
+                    for item3 in itemarray:
+                        if item3.productId == item2.productId+ '_BLOCK':
+                            profit = round(item3.sellPrice - item2.buyPrice*160,1)
+                            profitPercentage = round((profit / item3.sellPrice)*100)
+
+                            if profitPercentage < 10:
+                                color = Fore.RED
+                            elif profitPercentage > 25:
+                                color = Fore.GREEN
+                            elif profitPercentage > 50:
+                                color = Fore.GREEN
+                            else:
+                                color = Fore.RESET
+
+                            print(item2.productId + " S: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
+                            print(item3.productId + " S: " + str(round(item3.sellPrice, 1)) + " Coins B: " + str(round(item3.buyPrice, 1)) + " Coins")
+                            print(color + "Profit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
+                    
                     
                 
                
