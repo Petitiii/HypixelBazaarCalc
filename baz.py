@@ -52,6 +52,8 @@ def calcute_price(itemarray):
                         color = Fore.RED
                     elif profitPercentage > 25:
                         color = Fore.GREEN
+                    elif profitPercentage > 50:
+                        color = Fore.GREEN
                     else:
                         color = Fore.RESET
 
