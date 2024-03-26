@@ -44,6 +44,11 @@ def calcute_price(itemarray):
             for item2 in itemarray:
                 if item2.productId == 'ENCHANTED_'+item.productId: 
                     
+                    flipitem1 = round(item.sellPrice - item.buyPrice,1)
+                    profitflipitem1= round((flipitem1/item.sellPrice*100))
+
+                    flipitem2 = round(item2.sellPrice - item2.buyPrice,1)
+                    profitflipitem2= round((flipitem2/item2.sellPrice*100))
 
                     profit = round(item2.sellPrice - item.buyPrice*160,1)
                     profitPercentage = round((profit / item2.sellPrice)*100)
@@ -58,8 +63,10 @@ def calcute_price(itemarray):
                         color = Fore.RESET
 
                     print(item.productId + " S: " + str(round(item.sellPrice, 1)) + " Coins B: " + str(round(item.buyPrice, 1)) + " Coins")
+                    print("Flip:"+str(flipitem1) +" Coins "+str(profitflipitem1)+"%")
                     print(item2.productId + " S: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
                     print(color + "Profit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
+                    print("Flip:"+str(flipitem2) +" Coins "+str(profitflipitem2)+"%")
                     
                     for item3 in itemarray:
                         if item3.productId == item2.productId+ '_BLOCK':
