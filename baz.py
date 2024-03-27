@@ -65,7 +65,7 @@ def calcute_price(itemarray):
                     print(item.productId + "\nS: " + str(round(item.sellPrice, 1)) + " Coins B: " + str(round(item.buyPrice, 1)) + " Coins")
                     print("Flip: "+str(flipitem1) +" Coins "+str(profitflipitem1)+"%")
                     print(item2.productId + "\nS: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
-                    print(color + "CraftProfit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
+                    print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                     print("Flip: "+str(flipitem2) +" Coins "+str(profitflipitem2)+"%")
                     
                     for item3 in itemarray:
@@ -89,7 +89,7 @@ def calcute_price(itemarray):
 
                             
                             print(item3.productId +"\nS: " + str(round(item3.sellPrice, 1)) + " Coins B: " + str(round(item3.buyPrice, 1)) + " Coins")
-                            print(color + "Craft Profit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
+                            print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                             print("Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
                     
                     
