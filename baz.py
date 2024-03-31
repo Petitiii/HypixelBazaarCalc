@@ -1,6 +1,7 @@
 import requests
 import json
 from colorama import Fore
+from colorama import Style
 
 apiKey = "8b47b741-8018-4ea2-a564-b01d5302b1d6"
 l = "api.hypixel.net/skyblock/bazaar/products?key=8b47b741-8018-4ea2-a564-b01d5302b1d6"
@@ -51,7 +52,7 @@ def calcute_price(itemarray):
                     profitflipitem2= round((flipitem2/item2.sellPrice*100))
 
                     profit = round(item2.sellPrice - item.buyPrice*160,1)
-                    profitPercentage = round((profit / item2.sellPrice)*100)
+                    profitPercentage = round((profit / item2.buyPrice)*100)
 
                     if profitPercentage < 10:
                         color = Fore.RED
@@ -76,11 +77,13 @@ def calcute_price(itemarray):
                     else:
                         colorf2 = Fore.RESET
 
+                    colorS = Fore.RESET
+
                     
 
-                    print(item.productId + "\nS: " + str(round(item.sellPrice, 1)) + " Coins B: " + str(round(item.buyPrice, 1)) + " Coins")
+                    print(colorS+Style.BRIGHT + item.productId + Style.RESET_ALL + "\nS: " + str(round(item.sellPrice, 1)) + " Coins B: " + str(round(item.buyPrice, 1)) + " Coins")
                     print(colorf1+"Flip: "+str(flipitem1) +" Coins "+str(profitflipitem1)+"%")
-                    print(item2.productId + "\nS: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
+                    print(colorS+Style.BRIGHT + item2.productId + Style.RESET_ALL + "\nS: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
                     print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                     print(colorf2+"Flip: "+str(flipitem2) +" Coins "+str(profitflipitem2)+"%")
                     
@@ -88,9 +91,9 @@ def calcute_price(itemarray):
                         if item3.productId == item2.productId+ '_BLOCK':
 
                             flipitem3 = round(item3.sellPrice - item3.buyPrice,1)
-                            profitflipitem3= round((flipitem3/item.sellPrice*100))
+                            profitflipitem3= round(((item3.sellPrice - item3.buyPrice)/item3.sellPrice)*100,1)
                             profit = round(item3.sellPrice - item2.buyPrice*160,1)
-                            profitPercentage = round((profit / item3.sellPrice)*100)
+                            profitPercentage = round(((item3.buyPrice - item3.buyPrice)/item3.sellPrice)*100)
 
                             if profitPercentage < 10:
                                 color = Fore.RED
@@ -109,7 +112,7 @@ def calcute_price(itemarray):
                                 colorf = Fore.RESET
 
                             
-                            print(item3.productId +"\nS: " + str(round(item3.sellPrice, 1)) + " Coins B: " + str(round(item3.buyPrice, 1)) + " Coins")
+                            print(colorS+Style.BRIGHT + item3.productId + Style.RESET_ALL +"\nS: " + str(round(item3.sellPrice, 1)) + " Coins B: " + str(round(item3.buyPrice, 1)) + " Coins")
                             print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                             print(colorf+"Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
                     
