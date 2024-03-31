@@ -62,11 +62,27 @@ def calcute_price(itemarray):
                     else:
                         color = Fore.RESET
 
+                    if profitflipitem1 < 2:
+                        colorf1 = Fore.RED
+                    elif profitflipitem1 > 10:
+                        colorf1 = Fore.GREEN
+                    else:
+                        colorf1 = Fore.RESET
+
+                    if profitflipitem2 < 2:
+                        colorf2 = Fore.RED
+                    elif profitflipitem2 > 10:
+                        colorf2 = Fore.GREEN
+                    else:
+                        colorf2 = Fore.RESET
+
+                    
+
                     print(item.productId + "\nS: " + str(round(item.sellPrice, 1)) + " Coins B: " + str(round(item.buyPrice, 1)) + " Coins")
-                    print("Flip: "+str(flipitem1) +" Coins "+str(profitflipitem1)+"%")
+                    print(colorf1+"Flip: "+str(flipitem1) +" Coins "+str(profitflipitem1)+"%")
                     print(item2.productId + "\nS: " + str(round(item2.sellPrice, 1)) + " Coins B: " + str(round(item2.buyPrice, 1)) + " Coins")
                     print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
-                    print("Flip: "+str(flipitem2) +" Coins "+str(profitflipitem2)+"%")
+                    print(colorf2+"Flip: "+str(flipitem2) +" Coins "+str(profitflipitem2)+"%")
                     
                     for item3 in itemarray:
                         if item3.productId == item2.productId+ '_BLOCK':
@@ -75,8 +91,6 @@ def calcute_price(itemarray):
                             profitflipitem3= round((flipitem3/item.sellPrice*100))
                             profit = round(item3.sellPrice - item2.buyPrice*160,1)
                             profitPercentage = round((profit / item3.sellPrice)*100)
-
-
 
                             if profitPercentage < 10:
                                 color = Fore.RED
@@ -87,10 +101,17 @@ def calcute_price(itemarray):
                             else:
                                 color = Fore.RESET
 
+                            if profitflipitem3 < 2:
+                                colorf = Fore.RED
+                            elif profitflipitem3 > 10:
+                                colorf = Fore.GREEN
+                            else:
+                                colorf = Fore.RESET
+
                             
                             print(item3.productId +"\nS: " + str(round(item3.sellPrice, 1)) + " Coins B: " + str(round(item3.buyPrice, 1)) + " Coins")
                             print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
-                            print("Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
+                            print(colorf+"Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
                     
                     
                 
