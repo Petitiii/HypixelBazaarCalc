@@ -11,9 +11,6 @@ class Item:
         self.productId= id
         self.sellPrice=buyP
         self.buyPrice=sellP
-        
-
-
 
 def get_products():
     itemsobjects = []
@@ -36,8 +33,7 @@ def get_products():
         ##json.dump(data, f)
     
     return itemsobjects
-
-        
+       
 def calcute_price(itemarray):
     itemsb160 = ['IRON_INGOT','MELON','DIAMOND','GOLD_INGOT','EMERALD','SAND','OBSIDIAN','LEATHER']
     for item in itemarray:
@@ -76,10 +72,8 @@ def calcute_price(itemarray):
                         colorf2 = Fore.GREEN
                     else:
                         colorf2 = Fore.RESET
-
                     colorS = Fore.RESET
 
-                    
 
                     print(colorS+Style.BRIGHT + item.productId + Style.RESET_ALL + "\nS: " + str(round(item.sellPrice, 1)) + " Coins B: " + str(round(item.buyPrice, 1)) + " Coins")
                     print(colorf1+"Flip: "+str(flipitem1) +" Coins "+str(profitflipitem1)+"%")
@@ -115,29 +109,6 @@ def calcute_price(itemarray):
                             print(colorS+Style.BRIGHT + item3.productId + Style.RESET_ALL +"\nS: " + str(round(item3.sellPrice, 1)) + " Coins B: " + str(round(item3.buyPrice, 1)) + " Coins")
                             print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                             print(colorf+"Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
-                    
-                    
-                
-               
-        
-            
-            
-
-
-
-
-def calculate_price1(data):
-    itemsb160 = ['IRON_INGOT','MELON','DIAMOND','GOLD_INGOT','EMERALD','SAND','OBSIDIAN','LEATHER']
-    itemse160 = ['ENCHANTED_IRON','ENCHANTED_MELON','ENCHANTED_DIAMOND']
-    items8= []
-
-    for item in itemsb160:
-        sell_price = data['products'][item]['quick_status']['sellPrice']
-        rounded_sell_price = round(sell_price,1)
-        price = rounded_sell_price * 160
-        print(item+": " + str(price))
-
-
 
 if __name__ == "__main__":
     calcute_price(get_products())
