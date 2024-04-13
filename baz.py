@@ -110,5 +110,12 @@ def calcute_price(itemarray):
                             print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                             print(colorf+"Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
 
+def printInfos(itemarray):
+    with open('data.txt', 'w') as f:
+        for item in itemarray:
+            f.write(item.productId + "\n")
+        
+
 if __name__ == "__main__":
     calcute_price(get_products())
+    printInfos(get_products())
