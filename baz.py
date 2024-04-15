@@ -2,6 +2,8 @@ import requests
 import json
 from colorama import Fore
 from colorama import Style
+import schedule
+import time
 
 apiKey = "8b47b741-8018-4ea2-a564-b01d5302b1d6"
 l = "api.hypixel.net/skyblock/bazaar/products?key=8b47b741-8018-4ea2-a564-b01d5302b1d6"
@@ -114,8 +116,19 @@ def printInfos(itemarray):
     with open('data.txt', 'w') as f:
         for item in itemarray:
             f.write(item.productId + "\n")
+            
+def job():
+        calcute_price(get_products())
+    
+
+schedule.every(15).seconds.do(job)
         
 
+
+    
+    
+    
 if __name__ == "__main__":
-    calcute_price(get_products())
-    printInfos(get_products())
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
