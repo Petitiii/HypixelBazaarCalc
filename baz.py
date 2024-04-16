@@ -123,9 +123,6 @@ def job():
 
 schedule.every(15).seconds.do(job)
         
-
-
-    
     
     
 if __name__ == "__main__":
