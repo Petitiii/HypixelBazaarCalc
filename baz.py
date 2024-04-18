@@ -5,8 +5,7 @@ from colorama import Style
 import schedule
 import time
 
-apiKey = "8b47b741-8018-4ea2-a564-b01d5302b1d6"
-l = "api.hypixel.net/skyblock/bazaar/products?key=8b47b741-8018-4ea2-a564-b01d5302b1d6"
+
 
 class Item:
     def __init__(self,id,sellP,buyP):
