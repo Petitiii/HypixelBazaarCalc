@@ -7,6 +7,8 @@ import time
 
 
 
+twelvehour= []
+
 class Item:
     def __init__(self,id,sellP,buyP):
         self.productId= id
@@ -120,11 +122,12 @@ def job():
         calcute_price(get_products())
     
 
-schedule.every(15).seconds.do(job)
+schedule.every(30).seconds.do(job)
         
     
     
 if __name__ == "__main__":
+    job()
     while True:
         schedule.run_pending()
         time.sleep(1)
