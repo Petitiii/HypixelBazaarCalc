@@ -1,24 +1,27 @@
 import requests
 import json
+import yaml
 from colorama import Fore
 from colorama import Style
 import schedule
 import time
 
 
+#class Item:
+#    def __init__(self,id,sellP,buyP):
+#        self.productId= id
+#        self.sellPrice=buyP
+#        self.buyPrice=sellP
+ITEMS160 = ['IRON_INGOT','MELON','DIAMOND','GOLD_INGOT','EMERALD','SAND','OBSIDIAN','LEATHER','ENCHANTED_IRON_INGOT', 
+            'ENCHANTED_MELON', 'ENCHANTED_DIAMOND', 'ENCHANTED_GOLD_INGOT', 'ENCHANTED_EMERALD', 'ENCHANTED_SAND', 'ENCHANTED_OBSIDIAN', 'ENCHANTED_LEATHER',
+            'ENCHANTED_IRON_INGOT_BLOCK', 'ENCHANTED_MELON_BLOCK', 'ENCHANTED_DIAMOND_BLOCK', 'ENCHANTED_GOLD_INGOT_BLOCK', 'ENCHANTED_EMERALD_BLOCK', 'ENCHANTED_SAND_BLOCK',
+            'ENCHANTED_OBSIDIAN_BLOCK', 'ENCHANTED_LEATHER_BLOCK']
+DATA_FILE = 'data.yaml'
 
-twelvehour= []
-
-class Item:
-    def __init__(self,id,sellP,buyP):
-        self.productId= id
-        self.sellPrice=buyP
-        self.buyPrice=sellP
 
 def get_products():
     itemsobjects = []
-    items = ['COBBLESTONE','ENCHANTED_COBBLESTONE','ENCHANTED_MELON_BLOCK','ENCHANTED_MELON',
-         'ENCHANTED_POTATO','','ENCHANTED_PUMPKIN','STRING','ENCHANTED_STRING',]
+    itemsdict = {}
     url = "https://api.hypixel.net/v2/skyblock/bazaar"
     response = requests.get(url)
     data = response.json()
@@ -29,20 +32,25 @@ def get_products():
             del data['products'][product]['buy_summary']
     
     for product in data['products']:
+        if product not in ITEMS160:
+            continue
         ##create new Item object
-        item = Item(product,data['products'][product]['quick_status']['sellPrice'],data['products'][product]['quick_status']['buyPrice'])
-        itemsobjects.append(item)
+        #item = Item(product, data['products'][product]['quick_status']['sellPrice'], data['products'][product]['quick_status']['buyPrice'])
+        
+        itemsdict[product] = {'buy': data['products'][product]['quick_status']['sellPrice'], 
+                              'sell': data['products'][product]['quick_status']['buyPrice']}
+        
+        #itemsobjects.append(item)
         ##with open('data.json', 'w') as f:
         ##json.dump(data, f)
-    
-    return itemsobjects
+    return itemsdict
        
 def calcute_price(itemarray):
-    itemsb160 = ['IRON_INGOT','MELON','DIAMOND','GOLD_INGOT','EMERALD','SAND','OBSIDIAN','LEATHER']
+    
     for item in itemarray:
-        if item.productId in itemsb160:
+        if item in ITEMS160:
             for item2 in itemarray:
-                if item2.productId == 'ENCHANTED_'+item.productId: 
+                if item2 == 'ENCHANTED_'+item.productId: 
                     
                     flipitem1 = round(item.sellPrice - item.buyPrice,1)
                     profitflipitem1= round((flipitem1/item.sellPrice*100))
@@ -113,13 +121,18 @@ def calcute_price(itemarray):
                             print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                             print(colorf+"Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
 
+def getInfo():
+    with open(DATA_FILE) as f:
+        file = yaml.load(f.read(), Loader=yaml.Loader)
+    return file
+
+# TODO durchlaufen und appenden
 def printInfos(itemarray):
-    with open('data.txt', 'w') as f:
-        for item in itemarray:
-            f.write(item.productId + "\n")
+    with open(DATA_FILE, 'w') as f:
+        yaml.dump(itemarray, f)
             
 def job():
-        calcute_price(get_products())
+    calcute_price(get_products())
     
 
 schedule.every(30).seconds.do(job)
@@ -128,6 +141,14 @@ schedule.every(30).seconds.do(job)
     
 if __name__ == "__main__":
     job()
+    
+    printInfos(get_products())
+    
+    file = getInfo()
+    
+    for item in file:
+        print(item, file[item])
+    
     while True:
         schedule.run_pending()
         time.sleep(1)
