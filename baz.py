@@ -4,13 +4,16 @@ from colorama import Fore
 from colorama import Style
 import schedule
 import time
+from datetime import datetime
 
 
 class Item:
-    def __init__(self,id,sellP,buyP):
+    def __init__(self,id,sellP,buyP,timeStamp):
         self.productId= id
         self.sellPrice=buyP
         self.buyPrice=sellP
+        self.timeStamp=timeStamp
+        
 ITEMS160 = ['IRON_INGOT','MELON','DIAMOND','GOLD_INGOT','EMERALD','SAND','OBSIDIAN','LEATHER','ENCHANTED_IRON_INGOT', 
             'ENCHANTED_MELON', 'ENCHANTED_DIAMOND', 'ENCHANTED_GOLD_INGOT', 'ENCHANTED_EMERALD', 'ENCHANTED_SAND', 'ENCHANTED_OBSIDIAN', 'ENCHANTED_LEATHER',
             'ENCHANTED_IRON_INGOT_BLOCK', 'ENCHANTED_MELON_BLOCK', 'ENCHANTED_DIAMOND_BLOCK', 'ENCHANTED_GOLD_INGOT_BLOCK', 'ENCHANTED_EMERALD_BLOCK', 'ENCHANTED_SAND_BLOCK',
@@ -34,10 +37,11 @@ def get_products():
         if product not in ITEMS160:
             continue
         ##create new Item object
-        item = Item(product,data['products'][product]['quick_status']['sellPrice'],data['products'][product]['quick_status']['buyPrice'])
+        timeStamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        item = Item(product,round(data['products'][product]['quick_status']['sellPrice'],1),round(data['products'][product]['quick_status']['buyPrice'],1),timeStamp)
+        
         itemsobjects.append(item)
-        ##with open('data.json', 'w') as f:
-        ##json.dump(data, f)
+
     
     return itemsobjects
 
@@ -117,7 +121,12 @@ def calcute_price(itemarray):
                             print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                             print(colorf+"Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
 
-
+def saveCSV(data):
+    with open('data.csv', 'a') as f:
+        f.write("productId,sellPrice,buyPrice,timeStamp\n")
+        for item in data:
+            f.write(item.productId + "," + str(item.sellPrice) + "," + str(item.buyPrice) +","+ str(item.timeStamp)+"\n")
+    
 #def getInfo():
  #   with open(DATA_FILE) as f:
   #      file = yaml.load(f.read(), Loader=yaml.Loader)
@@ -129,10 +138,12 @@ def calcute_price(itemarray):
   #      yaml.dump(itemarray, f)
             
 def job():
-    calcute_price(get_products())
+    data = get_products()
+    calcute_price(data)
+    saveCSV(data)
     
 
-schedule.every(30).seconds.do(job)
+schedule.every(60).seconds.do(job)
         
     
     
