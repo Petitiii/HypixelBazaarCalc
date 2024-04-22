@@ -1,68 +1,68 @@
 - !!python/object:__main__.Item
-  buyPrice: 307.4285732614832
+  buyPrice: 307.66615928124895
   productId: ENCHANTED_MELON
-  sellPrice: 349.0865005138746
+  sellPrice: 328.9467742449852
 - !!python/object:__main__.Item
-  buyPrice: 50005.99158287848
+  buyPrice: 50830.70955783559
   productId: ENCHANTED_MELON_BLOCK
-  sellPrice: 51179.29786982249
+  sellPrice: 51395.1996763754
 - !!python/object:__main__.Item
-  buyPrice: 7.460037187127532
+  buyPrice: 6.800000000000001
   productId: DIAMOND
-  sellPrice: 7.9812641937925815
+  sellPrice: 8.9
 - !!python/object:__main__.Item
-  buyPrice: 9.426039868364265
+  buyPrice: 15.774097236886993
   productId: SAND
-  sellPrice: 15.0
+  sellPrice: 28.794851994851992
 - !!python/object:__main__.Item
-  buyPrice: 202732.23407056654
+  buyPrice: 201566.67760255135
   productId: ENCHANTED_DIAMOND_BLOCK
-  sellPrice: 205507.43102040817
+  sellPrice: 204855.63895917192
 - !!python/object:__main__.Item
-  buyPrice: 20.9
+  buyPrice: 22.990381326896603
   productId: OBSIDIAN
-  sellPrice: 25.9
+  sellPrice: 33.732649348501496
 - !!python/object:__main__.Item
-  buyPrice: 967.0
+  buyPrice: 1042.102549642131
   productId: ENCHANTED_EMERALD
-  sellPrice: 1097.6528446389498
+  sellPrice: 1425.982922994686
 - !!python/object:__main__.Item
-  buyPrice: 0.4
+  buyPrice: 0.7
   productId: MELON
-  sellPrice: 2.1299588525403452
+  sellPrice: 3.0
 - !!python/object:__main__.Item
-  buyPrice: 2.1999999999999997
+  buyPrice: 2.6851252482409245
   productId: GOLD_INGOT
-  sellPrice: 7.2
+  sellPrice: 5.865808751132291
 - !!python/object:__main__.Item
-  buyPrice: 4.885796015899639
+  buyPrice: 4.0
   productId: EMERALD
-  sellPrice: 7.9
+  sellPrice: 8.8
 - !!python/object:__main__.Item
-  buyPrice: 1335.4389973321477
+  buyPrice: 1311.1565357818276
   productId: ENCHANTED_DIAMOND
-  sellPrice: 1387.7524431339514
+  sellPrice: 1469.6344715013824
 - !!python/object:__main__.Item
-  buyPrice: 1510.7297006435763
+  buyPrice: 2102.5065216234907
   productId: ENCHANTED_SAND
-  sellPrice: 1940.4755129589632
+  sellPrice: 2434.6354762355613
 - !!python/object:__main__.Item
-  buyPrice: 7094.201860370029
+  buyPrice: 6575.6
   productId: ENCHANTED_LEATHER
-  sellPrice: 7807.129705351774
+  sellPrice: 7231.922460342474
 - !!python/object:__main__.Item
-  buyPrice: 153000.91582491584
+  buyPrice: 147501.4993387493
   productId: ENCHANTED_EMERALD_BLOCK
-  sellPrice: 157092.9627952756
+  sellPrice: 153967.19230107527
 - !!python/object:__main__.Item
-  buyPrice: 78.1
+  buyPrice: 97.31024800241218
   productId: LEATHER
-  sellPrice: 105.9494122295762
+  sellPrice: 123.92851890495353
 - !!python/object:__main__.Item
-  buyPrice: 7.531887778967393
+  buyPrice: 9.613716809603723
   productId: IRON_INGOT
-  sellPrice: 11.26940975223941
+  sellPrice: 14.994489614465834
 - !!python/object:__main__.Item
-  buyPrice: 4017.3249686150834
+  buyPrice: 4103.76655513653
   productId: ENCHANTED_OBSIDIAN
-  sellPrice: 4069.1401699029125
+  sellPrice: 4202.984386521075

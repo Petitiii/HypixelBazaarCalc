@@ -117,15 +117,16 @@ def calcute_price(itemarray):
                             print(color + "Craftprofit: " + str(profit)+ " Coins", str(profitPercentage) + "%" + Fore.RESET)
                             print(colorf+"Flip: "+str(flipitem3) +" Coins "+str(profitflipitem3)+"%")
 
-def getInfo():
-    with open(DATA_FILE) as f:
-        file = yaml.load(f.read(), Loader=yaml.Loader)
-    return file
+
+#def getInfo():
+ #   with open(DATA_FILE) as f:
+  #      file = yaml.load(f.read(), Loader=yaml.Loader)
+   # return file
 
 # TODO durchlaufen und appenden
-def printInfos(itemarray):
-    with open(DATA_FILE, 'w') as f:
-        yaml.dump(itemarray, f)
+#def printInfos(itemarray):
+ #   with open(DATA_FILE, 'w') as f:
+  #      yaml.dump(itemarray, f)
             
 def job():
     calcute_price(get_products())
@@ -138,12 +139,9 @@ schedule.every(30).seconds.do(job)
 if __name__ == "__main__":
     job()
     
-    printInfos(get_products())
+    #printInfos(get_products())
     
-    file = getInfo()
     
-    for item in file:
-        print(item, file[item])
     
     while True:
         schedule.run_pending()
