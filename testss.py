@@ -38,7 +38,7 @@ def monitor_area(region, pattern, output_file):
         time.sleep(1)  # Adjust sleep time as necessary for performance vs. responsiveness
 
 # Regular expression to match the structured sentence
-pattern = r"Buy Order Setup! \d+x \w+"
+pattern = r"Buy Order Setup! \d+x .+? for"
 
 # Monitor the full screen
 monitor_area([0, 0, 1920, 1080], pattern, 'detected_orders.txt')
