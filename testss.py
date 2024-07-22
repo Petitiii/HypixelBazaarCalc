@@ -13,7 +13,7 @@ def preprocess_image(image):
     _, binary = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
     return binary
 
-def monitor_area(region, pattern, output_file):
+def monitor_area(region, keyword, output_file):
 
     last_captured = None
 
@@ -26,19 +26,23 @@ def monitor_area(region, pattern, output_file):
 
         # Perform OCR on the processed image
         text = pytesseract.image_to_string(processed_image)
-        matches = re.findall(pattern, text)
 
-        for match in matches:
-            if match != last_captured:
-                with open(output_file, 'a') as file:
-                    file.write(match + "\n")
-                    print(match)  # Print the detected text for verification
-                last_captured = match
+        # Search for the keyword and capture the rest of the line
+        lines = text.split('\n')
+        for line in lines:
+            if keyword in line:
+                # Extract everything after the keyword
+                extracted_text = line.split(keyword, 1)[1].strip()
+                if extracted_text != last_captured:
+                    with open(output_file, 'a') as file:
+                        file.write(extracted_text + "\n")
+                        print(extracted_text)  # Print the detected text for verification
+                    last_captured = extracted_text
 
         time.sleep(1)  # Adjust sleep time as necessary for performance vs. responsiveness
 
-# Regular expression to match the structured sentence
-pattern = r"Buy Order Setup! \d+x .+? for"
+# Keyword to search for in the text
+keyword = "Buy Order Setup!"
 
 # Monitor the full screen
-monitor_area([0, 0, 1920, 1080], pattern, 'detected_orders.txt')
+monitor_area([0, 0, 1920, 1080], keyword, 'detected_orders.txt')

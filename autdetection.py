@@ -9,46 +9,37 @@ import time
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 def preprocess_image(image):
-    """Process image for OCR by converting it to grayscale, inverting, and thresholding."""
     # Convert image to grayscale
-    img = Image.fromarray(image).convert("L")
-    
-    # Invert image colors
-    img = ImageOps.invert(img)
-    
-    # Apply binary thresholding
-    np_image = np.array(img)
-    thresh = 240
-    binary_image = (np_image > thresh) * 255  # Binary thresholding simplified
-    return Image.fromarray(np.uint8(binary_image))
-
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    # Apply thresholding to get a binary image
+    _, binary = cv2.threshold(gray, 150, 255, cv2.THRESH_BINARY)
+    return binary
 def monitor_area(region, pattern, output_file):
-    """Monitor specified screen region for changes and perform OCR."""
+
     last_captured = None
 
     while True:
         # Grab the screen region specified
         screen = np.array(ImageGrab.grab(bbox=region))
         
-        # Process the image
+        # Preprocess the image to improve OCR accuracy
         processed_image = preprocess_image(screen)
 
         # Perform OCR on the processed image
         text = pytesseract.image_to_string(processed_image)
-        match = re.search(pattern, text)
+        matches = re.findall(pattern, text)
 
-        if match:
-            current_match = match.group()
-            if current_match != last_captured:
+        for match in matches:
+            if match != last_captured:
                 with open(output_file, 'a') as file:
-                    file.write(current_match + "\n")
-                    print(current_match)  # Print the detected text for verification
-                last_captured = current_match
+                    file.write(match + "\n")
+                    print(match)  # Print the detected text for verification
+                last_captured = match
 
         time.sleep(1)  # Adjust sleep time as necessary for performance vs. responsiveness
 
 # Regular expression to match the structured sentence
-pattern = r"Buy Order Setup! \d+x \w+ for \d+(\.\d+)? Coins"
+pattern = r"Buy Order Setup! \d+x .+? for "
 
 # Monitor the full screen
 monitor_area([0, 0, 1920, 1080], pattern, 'detected_orders.txt')
