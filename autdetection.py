@@ -7,15 +7,24 @@ import time
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Pfad anpassen
 
+def preprocess_image(image):
+    # Convert to grayscale
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    # Apply adaptive thresholding to enhance contrast
+    thresh = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
+    # Optionally resize the image to enhance readability
+    resized = cv2.resize(thresh, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_LINEAR)
+    return resized
+
 def monitor_area(region, pattern, output_file):
     last_captured = None  # Zum Speichern des zuletzt erfassten Satzes
 
     while True:
-        screen = ImageGrab.grab(bbox=region)
-        screen_np = np.array(screen)
-        screen_gray = cv2.cvtColor(screen_np, cv2.COLOR_BGR2GRAY)
+        screen = np.array(ImageGrab.grab(bbox=region))
+        processed_image = preprocess_image(screen)
 
-        text = pytesseract.image_to_string(screen_gray)
+        # Using pytesseract to do OCR on the processed image
+        text = pytesseract.image_to_string(processed_image)
         match = re.search(pattern, text)
 
         if match:
@@ -26,10 +35,10 @@ def monitor_area(region, pattern, output_file):
                     print(current_match)  # Ausgabe des Satzes zur Überprüfung
                 last_captured = current_match  # Aktualisiere den zuletzt erfassten Satz
 
-        time.sleep(2)  
+        time.sleep(2)  # Sleep for 2 seconds to prevent excessive CPU usage
 
 # Regex-Muster für den gesuchten Satz, der jede Art von Produkt und Menge akzeptiert
-pattern = r"Your Buy Order Setup! \d+x \w+ for \d+(\.\d+)? Coins"
+pattern = r"Buy Order Setup! \d+x \w+ for \d+(\.\d+)? Coins"
 
-# Bereichsdefinition [x_start, y_start, x_end, y_end]
-monitor_area([333, 536, 1270, 850], pattern, 'detected_orders.txt')
+# Bereichsdefinition für den gesamten Bildschirm [x_start, y_start, x_end, y_end]
+monitor_area([0, 0, 1920, 1080], pattern, 'detected_orders.txt')
