@@ -5,27 +5,33 @@ import pytesseract
 import re
 import time
 
-# Configure the path to the Tesseract executable
+# Set the path to the Tesseract executable
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
-def preprocess_image(image):
+def preprocess_and_save_image(image):
     # Convert image to grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     
-    # Apply a binary threshold to the image
-    _, binary = cv2.threshold(gray, 100, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    # Save the grayscale image for inspection
+    cv2.imwrite('grayscale_image.png', gray)
 
+    # Apply binary thresholding for OCR preparation
+    _, binary = cv2.threshold(gray, 128, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    
     # Optionally, resize the image to enhance readability
     resized = cv2.resize(binary, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_LINEAR)
-
+    
     return resized
 
 def monitor_area(region, pattern, output_file):
     last_captured = None
 
     while True:
+        # Grab the screen region specified
         screen = np.array(ImageGrab.grab(bbox=region))
-        processed_image = preprocess_image(screen)
+        
+        # Process and save the image
+        processed_image = preprocess_and_save_image(screen)
 
         # Perform OCR on the processed image
         text = pytesseract.image_to_string(processed_image)
