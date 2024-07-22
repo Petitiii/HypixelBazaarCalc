@@ -140,7 +140,7 @@ def saveCSV(data):
 def job():
     data = get_products()
     calcute_price(data)
-    saveCSV(data)
+    
     
 
 schedule.every(60).seconds.do(job)
