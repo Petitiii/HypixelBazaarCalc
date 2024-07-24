@@ -71,7 +71,7 @@ def capture_and_process(region, keyword, output_file):
 keyword = "Buy Order Setup!"
 
 # Define the region to monitor (left, top, right, bottom)
-region = (0, 0, 1920, 1080)  # Adjust this to your screen resolution or the specific area to monitor
+region = (0, 160, 1330, 900)  # Adjust this to your screen resolution or the specific area to monitor
 
 # Output file to save detected orders
 output_file = 'detected_orders.txt'
