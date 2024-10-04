@@ -7,8 +7,8 @@ import psycopg2
 db_config = {
     'host': 'localhost',
     'dbname': 'SkyBlock',
-    'user': 'peter',
-    'password': 'peter132'
+    'user': '',
+    'password': ''
 }
 
 def get_products():
@@ -91,7 +91,7 @@ def get_products():
         # Commit the transaction
         conn.commit()
 
-        # Close the cursor and connection
+        
         cursor.close()
         conn.close()
 
@@ -100,7 +100,7 @@ def get_products():
     except Exception as e:
         print(f"Error: {e}")
 
-# Infinite loop to run the function every 2 minutes
+
 while True:
     get_products()
-    time.sleep(600)  # Wait for 120 seconds before running again
+    time.sleep(600)  
