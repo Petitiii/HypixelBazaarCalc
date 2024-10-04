@@ -1,0 +1,432 @@
+Product: ENCHANTED_MELON
+Sell Price: 305.0
+Buy Price: 324.1
+Sell Volume: 10229070
+Buy Volume: 82765106
+Sell Orders: 246
+Buy Orders: 1218
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_GLISTERING_MELON
+Sell Price: 751.2
+Buy Price: 4499.0
+Sell Volume: 794247
+Buy Volume: 11592
+Sell Orders: 135
+Buy Orders: 55
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_MELON_BLOCK
+Sell Price: 50205.2
+Buy Price: 51298.1
+Sell Volume: 248223
+Buy Volume: 55666
+Sell Orders: 53
+Buy Orders: 93
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: DIAMOND
+Sell Price: 6.5
+Buy Price: 9.3
+Sell Volume: 17659258
+Buy Volume: 2661702
+Sell Orders: 277
+Buy Orders: 105
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: COBBLESTONE
+Sell Price: 0.9
+Buy Price: 2.6
+Sell Volume: 1816095
+Buy Volume: 4188875
+Sell Orders: 27
+Buy Orders: 121
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: WHALE_BAIT
+Sell Price: 2802.5
+Buy Price: 3300.8
+Sell Volume: 396266
+Buy Volume: 1904506
+Sell Orders: 16
+Buy Orders: 1011
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_DIAMOND_BLOCK
+Sell Price: 201815.6
+Buy Price: 204894.1
+Sell Volume: 4059701
+Buy Volume: 68373
+Sell Orders: 1186
+Buy Orders: 173
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_COAL_BLOCK
+Sell Price: 82147.5
+Buy Price: 86565.3
+Sell Volume: 72985
+Buy Volume: 21213
+Sell Orders: 44
+Buy Orders: 119
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: BAZAAR_COOKIE
+Sell Price: 0.0
+Buy Price: 0.0
+Sell Volume: 0
+Buy Volume: 0
+Sell Orders: 0
+Buy Orders: 0
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: MELON
+Sell Price: 0.5
+Buy Price: 3.0
+Sell Volume: 3150081
+Buy Volume: 6029676
+Sell Orders: 46
+Buy Orders: 122
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_HAY_BLOCK
+Sell Price: 7102.0
+Buy Price: 7901.3
+Sell Volume: 2705869
+Buy Volume: 2183345
+Sell Orders: 293
+Buy Orders: 308
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_COAL
+Sell Price: 864.2
+Buy Price: 933.5
+Sell Volume: 7665137
+Buy Volume: 2192342
+Sell Orders: 200
+Buy Orders: 605
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_DIAMOND
+Sell Price: 1278.4
+Buy Price: 1314.9
+Sell Volume: 5009879
+Buy Volume: 3660114
+Sell Orders: 132
+Buy Orders: 526
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_COBBLESTONE
+Sell Price: 358.1
+Buy Price: 400.0
+Sell Volume: 2352846
+Buy Volume: 8013346
+Sell Orders: 84
+Buy Orders: 1008
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ICE_BAIT
+Sell Price: 0.0
+Buy Price: 3.2
+Sell Volume: 0
+Buy Volume: 153872
+Sell Orders: 0
+Buy Orders: 21
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_LAPIS_LAZULI_BLOCK
+Sell Price: 93849.2
+Buy Price: 95015.1
+Sell Volume: 512918
+Buy Volume: 74816
+Sell Orders: 300
+Buy Orders: 278
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_LAPIS_LAZULI
+Sell Price: 669.2
+Buy Price: 783.1
+Sell Volume: 3221404
+Buy Volume: 2133300
+Sell Orders: 160
+Buy Orders: 557
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: COAL
+Sell Price: 2.4
+Buy Price: 5.1
+Sell Volume: 10133423
+Buy Volume: 68405202
+Sell Orders: 149
+Buy Orders: 1020
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_MITHRIL
+Sell Price: 2005.8
+Buy Price: 2174.1
+Sell Volume: 3103656
+Buy Volume: 4101435
+Sell Orders: 116
+Buy Orders: 1249
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_BREAD
+Sell Price: 162.4
+Buy Price: 241.8
+Sell Volume: 407687
+Buy Volume: 204364
+Sell Orders: 20
+Buy Orders: 36
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: WHEAT
+Sell Price: 3.4
+Buy Price: 6.1
+Sell Volume: 6765938
+Buy Volume: 2621748
+Sell Orders: 106
+Buy Orders: 100
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_CACTUS_GREEN
+Sell Price: 686.7
+Buy Price: 779.0
+Sell Volume: 3087676
+Buy Volume: 4240536
+Sell Orders: 165
+Buy Orders: 1011
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_PACKED_ICE
+Sell Price: 76000.0
+Buy Price: 79080.0
+Sell Volume: 30479
+Buy Volume: 17056
+Sell Orders: 24
+Buy Orders: 94
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: MITHRIL_ORE
+Sell Price: 10.1
+Buy Price: 16.7
+Sell Volume: 21676719
+Buy Volume: 8985382
+Sell Orders: 330
+Buy Orders: 202
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_MELON
+Sell Price: 305.0
+Buy Price: 324.1
+Sell Volume: 10228705
+Buy Volume: 82765106
+Sell Orders: 246
+Buy Orders: 1218
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_GLISTERING_MELON
+Sell Price: 751.2
+Buy Price: 4499.0
+Sell Volume: 794247
+Buy Volume: 11592
+Sell Orders: 135
+Buy Orders: 55
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_MELON_BLOCK
+Sell Price: 50205.2
+Buy Price: 51298.1
+Sell Volume: 245448
+Buy Volume: 55653
+Sell Orders: 52
+Buy Orders: 93
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: DIAMOND
+Sell Price: 6.5
+Buy Price: 9.3
+Sell Volume: 17657751
+Buy Volume: 2660166
+Sell Orders: 277
+Buy Orders: 104
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: COBBLESTONE
+Sell Price: 0.9
+Buy Price: 2.6
+Sell Volume: 1813391
+Buy Volume: 4188875
+Sell Orders: 27
+Buy Orders: 121
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: WHALE_BAIT
+Sell Price: 2802.5
+Buy Price: 3300.8
+Sell Volume: 396266
+Buy Volume: 1904506
+Sell Orders: 16
+Buy Orders: 1011
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_DIAMOND_BLOCK
+Sell Price: 201815.9
+Buy Price: 204894.1
+Sell Volume: 4059723
+Buy Volume: 68373
+Sell Orders: 1188
+Buy Orders: 173
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_COAL_BLOCK
+Sell Price: 82147.5
+Buy Price: 86565.8
+Sell Volume: 72985
+Buy Volume: 21212
+Sell Orders: 44
+Buy Orders: 119
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: BAZAAR_COOKIE
+Sell Price: 0.0
+Buy Price: 0.0
+Sell Volume: 0
+Buy Volume: 0
+Sell Orders: 0
+Buy Orders: 0
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: MELON
+Sell Price: 0.5
+Buy Price: 3.1
+Sell Volume: 3149866
+Buy Volume: 6026348
+Sell Orders: 46
+Buy Orders: 122
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_HAY_BLOCK
+Sell Price: 7101.7
+Buy Price: 7903.6
+Sell Volume: 2705830
+Buy Volume: 2181449
+Sell Orders: 293
+Buy Orders: 308
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_COAL
+Sell Price: 864.2
+Buy Price: 933.5
+Sell Volume: 7665134
+Buy Volume: 2193693
+Sell Orders: 200
+Buy Orders: 607
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_DIAMOND
+Sell Price: 1278.4
+Buy Price: 1314.9
+Sell Volume: 5008677
+Buy Volume: 3660114
+Sell Orders: 132
+Buy Orders: 526
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_COBBLESTONE
+Sell Price: 358.1
+Buy Price: 400.0
+Sell Volume: 2352589
+Buy Volume: 8013124
+Sell Orders: 84
+Buy Orders: 1008
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ICE_BAIT
+Sell Price: 0.0
+Buy Price: 3.2
+Sell Volume: 0
+Buy Volume: 153872
+Sell Orders: 0
+Buy Orders: 21
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_LAPIS_LAZULI_BLOCK
+Sell Price: 93849.2
+Buy Price: 95015.1
+Sell Volume: 512918
+Buy Volume: 74816
+Sell Orders: 300
+Buy Orders: 278
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_LAPIS_LAZULI
+Sell Price: 669.2
+Buy Price: 783.1
+Sell Volume: 3221331
+Buy Volume: 2133299
+Sell Orders: 160
+Buy Orders: 557
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: COAL
+Sell Price: 2.4
+Buy Price: 5.1
+Sell Volume: 10092229
+Buy Volume: 68403282
+Sell Orders: 148
+Buy Orders: 1020
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_MITHRIL
+Sell Price: 2006.2
+Buy Price: 2174.4
+Sell Volume: 3104562
+Buy Volume: 4105439
+Sell Orders: 117
+Buy Orders: 1251
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_BREAD
+Sell Price: 162.4
+Buy Price: 241.8
+Sell Volume: 407687
+Buy Volume: 204364
+Sell Orders: 20
+Buy Orders: 36
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: WHEAT
+Sell Price: 3.4
+Buy Price: 6.1
+Sell Volume: 6764696
+Buy Volume: 2621748
+Sell Orders: 106
+Buy Orders: 100
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_CACTUS_GREEN
+Sell Price: 686.8
+Buy Price: 779.1
+Sell Volume: 3088001
+Buy Volume: 4235849
+Sell Orders: 166
+Buy Orders: 1011
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: ENCHANTED_PACKED_ICE
+Sell Price: 76000.0
+Buy Price: 79080.0
+Sell Volume: 30479
+Buy Volume: 17056
+Sell Orders: 24
+Buy Orders: 94
+Timestamp: 2024-09-23 22:03
+----------------------------------------
+Product: MITHRIL_ORE
+Sell Price: 10.0
+Buy Price: 16.7
+Sell Volume: 21585674
+Buy Volume: 8985382
+Sell Orders: 326
+Buy Orders: 202
+Timestamp: 2024-09-23 22:03
+----------------------------------------
